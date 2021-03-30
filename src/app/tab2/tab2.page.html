@@ -1,17 +1,43 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Foto
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card class="ion-text-center">
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+
+    
+
+  
+  <ion-card-header>
+    <ion-card-title>
+      Upload FOTO
+    </ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-button color='danger' shape="round" size="medium" (click)="hapusFoto()">Hapus</ion-button>
+    <ion-button color='primary' shape="round" size="medium" (click)="uploadFoto()">Upload</ion-button>
+  </ion-card-content>
+  </ion-card>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let isiFoto of fotoService.dataFoto; index as position">
+        <ion-img [src]="isiFoto.webviewPath"></ion-img>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="TambahFoto()">
+      <ion-icon name="camera-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

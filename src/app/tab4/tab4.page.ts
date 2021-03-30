@@ -6,11 +6,12 @@ export interface fileFoto{
   path:string; //web
 }
 @Component({
-  selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss']
+  selector: 'app-tab4',
+  templateUrl: './tab4.page.html',
+  styleUrls: ['./tab4.page.scss'],
 })
-export class Tab2Page  {
+export class Tab4Page implements OnInit {
+
   urlImageStorage : string[] = [];
   
   constructor(
@@ -19,12 +20,13 @@ export class Tab2Page  {
 
   async ngOnInit(){
     await this.fotoService.loadFoto();
-  }
-
-  async ionViewDidEnter(){
-    await this.fotoService.loadFoto();
     this.tampilkanData();
   }
+
+  // async ionViewDidEnter(){
+  //   await this.fotoService.loadFoto();
+  //   this.tampilkanData();
+  // }
 
   TambahFoto(){
     this.fotoService.tambahFoto();
