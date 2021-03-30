@@ -1,0 +1,7 @@
+{
+  "name": "cobates",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
